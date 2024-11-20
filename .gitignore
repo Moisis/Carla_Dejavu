@@ -1,0 +1,8 @@
+examples/__pycache__/speed_limit.cpython-310.pyc
+examples/__pycache__/safe_distance.cpython-310.pyc
+examples/__pycache__/collision_rate.cpython-310.pyc
+examples/__pycache__/jvm_setup.cpython-310.pyc
+CollisionRateResults.txt
+dejavu-results
+SafeDistanceResults.txt
+SpeedLimitResults.txt

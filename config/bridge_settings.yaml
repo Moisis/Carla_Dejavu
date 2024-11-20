@@ -1,0 +1,27 @@
+
+apply_control : true  # if false, the ego vehicle will follow the planned trajectory without control
+
+publishing_rate: 100   
+
+publish_localization_chassis_msgs: true
+
+publish_gnss: true
+publish_imu: true
+
+publish_lidar_msg: true
+publish_camera_msg: false
+
+publish_obstacles_ground_truth: true
+detection_radius: 45
+
+publish_traffic_light_gt: true
+
+
+
+carla:
+  # the network connection for the python connection to CARLA
+  # host: '172.17.0.1'
+  host : '127.0.0.1'
+  #host: '192.168.125.110' #remote server
+  port: 2000
+  
