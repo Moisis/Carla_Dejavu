@@ -149,6 +149,7 @@ except ImportError:
 from safe_distance import SafeDistance
 from speed_limit import SpeedLimit
 from collision_rate import CollisionRate
+from acceleration_limit import AccelerationLimit
 
 # ==============================================================================
 # -- Global functions ----------------------------------------------------------
@@ -300,6 +301,7 @@ class World(object):
         self.speed_limit_monitor = SpeedLimit()
         self.safe_distance_monitor = SafeDistance()
         self.collision_rate_monitor = CollisionRate()
+        self.acceleration_limit_monitor = AccelerationLimit()
         self.obstacle_sensor = ObstacleSensor(self.player,self.hud, self.world, self.safe_distance_monitor)
         self.collision_sensor = CollisionSensor(self.player, self.hud,self) 
         self.lane_invasion_sensor = LaneInvasionSensor(self.player, self.hud)
@@ -367,6 +369,7 @@ class World(object):
     def tick(self, clock):
         self.hud.tick(self, clock)
         self.speed_limit_monitor.send_data(self.player)
+        self.acceleration_limit_monitor.send_data(self.player)
         current_location = self.player.get_location()
         distance = euclidean_distance(self.previous_location,current_location)
         self.total_distance+=distance
